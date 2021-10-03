@@ -3,7 +3,7 @@ import {init, RematchDispatch, RematchRootState} from '@rematch/core';
 import {models, RootModel} from './models';
 
 /**
- * Store
+ * Store (not used)
  * @type {RematchStore<TModels, TExtraModels>}
  */
 

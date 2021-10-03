@@ -1,3 +1,6 @@
+/**
+ * Also it can be downloaded from api using rematch and axious
+ */
 export const items = [
   {
     title: 'Allan Munger',

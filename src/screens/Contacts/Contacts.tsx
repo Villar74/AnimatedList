@@ -19,6 +19,10 @@ import {useTheme} from 'react-native-paper';
 
 const {width} = Dimensions.get('window');
 
+/**
+ * Contacts screen
+ * @constructor
+ */
 const Contacts: React.FC = () => {
   const iconScroll = useAnimatedRef();
   const itemScroll = useAnimatedRef();

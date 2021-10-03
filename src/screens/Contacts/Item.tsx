@@ -1,6 +1,5 @@
 import * as React from 'react';
-import {StyleSheet, Dimensions, Alert, View, Text} from 'react-native';
-import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
+import {StyleSheet, Dimensions, View, Text} from 'react-native';
 import Animated from 'react-native-reanimated';
 import {useTheme} from 'react-native-paper';
 
@@ -20,32 +19,33 @@ interface ItemProps {
   item: Item;
 }
 
+/**
+ * Item element for contacts
+ * @param title
+ * @param subtitle
+ * @param description
+ * @constructor
+ */
 const Item = ({item: {title, subtitle, description}}: ItemProps) => {
   const [surname, ...name] = title.split(' ');
   const {colors} = useTheme();
 
   return (
-    <TouchableWithoutFeedback onPress={() => Alert.alert('Pressed!')}>
-      <Animated.View style={[styles.container]}>
-        <View style={styles.titleContainer}>
-          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-            <Text style={[styles.surname, {color: colors.text}]}>
-              {surname}{' '}
-            </Text>
-            <Text style={[styles.name, {color: colors.text}]}>
-              {name.join(' ')}
-            </Text>
-          </View>
-          <Text style={[styles.subtitle, {color: colors.text}]}>
-            {subtitle}
-          </Text>
-          <Text style={[styles.about, {color: colors.text}]}>About me</Text>
-          <Text style={[styles.description, {color: colors.text}]}>
-            {description}
+    <Animated.View style={[styles.container]}>
+      <View style={styles.titleContainer}>
+        <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+          <Text style={[styles.surname, {color: colors.text}]}>{surname} </Text>
+          <Text style={[styles.name, {color: colors.text}]}>
+            {name.join(' ')}
           </Text>
         </View>
-      </Animated.View>
-    </TouchableWithoutFeedback>
+        <Text style={[styles.subtitle, {color: colors.text}]}>{subtitle}</Text>
+        <Text style={[styles.about, {color: colors.text}]}>About me</Text>
+        <Text style={[styles.description, {color: colors.text}]}>
+          {description}
+        </Text>
+      </View>
+    </Animated.View>
   );
 };
 
