@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 /**
- * Класс использующий axios для взаимодействия с OpenAPI
+ * Api
  */
 export default class api {
   static async getList() {
